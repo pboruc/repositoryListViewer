@@ -1,18 +1,21 @@
 package com.example.repositoryListViewer.entity;
 
-import org.springframework.stereotype.Component;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 import java.util.List;
 
-@Component
 public class Repository {
     private String RepositoryName;
-    private String OwnerLogin;
+
+    private String fullName;
+    private Owner Owner;
     private List<Branch> branches;
 
     public Repository() {
     }
 
+    @JsonGetter("name")
     public String getRepositoryName() {
         return RepositoryName;
     }
@@ -21,12 +24,22 @@ public class Repository {
         RepositoryName = repositoryName;
     }
 
-    public String getOwnerLogin() {
-        return OwnerLogin;
+    @JsonGetter("full_name")
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setOwnerLogin(String ownerLogin) {
-        OwnerLogin = ownerLogin;
+    @JsonSetter("full_name")
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public Owner getOwner() {
+        return Owner;
+    }
+
+    public void setOwner(Owner owner) {
+        Owner = owner;
     }
 
     public List<Branch> getBranches() {

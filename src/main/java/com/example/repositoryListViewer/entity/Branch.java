@@ -2,7 +2,7 @@ package com.example.repositoryListViewer.entity;
 
 public class Branch {
     private String name;
-    private String lastCommitSha;
+    private Commit commit;
 
     public Branch() {
     }
@@ -15,11 +15,11 @@ public class Branch {
         this.name = name;
     }
 
-    public String getLastCommitSha() {
-        return lastCommitSha;
+    public Commit getCommit() {
+        return commit;
     }
 
-    public void setLastCommitSha(String lastCommitSha) {
-        this.lastCommitSha = lastCommitSha;
+    public void setCommit(Commit commit) {
+        this.commit = commit;
     }
 }
